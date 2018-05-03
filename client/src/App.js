@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import ProfilePage from "./components/ProfilePage";
 // import EditTeacher from './components/EditTeacher';
-// import Teacher from "./components/Teacher";
+import SingleUser from "./components/SingleUser";
 import SplashPage from './components/SplashPage'
 // import NewTeacher from './components/NewTeacher';
-// import ClassroomList from './components/ClassroomList';
+import ContactList from './components/ContactList';
 // import Classroom from './components/Classroom';
 // import EditClassroom from './components/EditClassroom';
 // // import { setAxiosDefaults } from './util';
-// import Student from './components/Student';
+import Contact from './components/Contact';
 
 class App extends Component {
   // componentWillMount(){
@@ -21,6 +21,9 @@ class App extends Component {
         <div>
           <Route exact path='/' component={SplashPage} />
           <Route exact path="/users" component={ProfilePage}/>
+          <Route exact path="/user/:id" component={SingleUser}/>
+          <Route exact path="/users/:id/contacts/:id" component={Contact}/>
+          <Route exact path="/users/:id/contacts" component={ContactList}/>
           {/*}
           <Route exact path='/teachers/:id/edit' component={EditTeacher} />
           <Route exact path='/teachers/new' component={NewTeacher} />

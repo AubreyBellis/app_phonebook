@@ -34,7 +34,7 @@ class ProfilePage extends Component {
             <UserInfo>
                   {this.state.users.map((user) => (
                   <UserCard key={user.id} user={user} />))}
-                  <Link to={`/users/new`}><button>Add a New User</button></Link>
+                  {/* <NewUserForm onNewUser={this.addNewUser} /> */}
             </UserInfo>
         );
     }

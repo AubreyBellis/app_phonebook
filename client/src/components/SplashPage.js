@@ -34,7 +34,7 @@ class SplashPage extends Component {
                 <br />
                 </HomePageContainer>
                 {/* <SplashPageFooter></SplashPageFooter> */}
-             
+                <button>test</button>
                 </div>
         );
     }

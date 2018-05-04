@@ -4,12 +4,14 @@ import styled from 'styled-components'
 
 const ContactCard = (props) => {
   const contact = props.contacts;
+  
   return (
    
-   <div>
+    <div>
       
       <p>Name:{contact.first_name}</p>
       <p>#:{contact.phone_number}</p>
+     
 
   </div>
   );

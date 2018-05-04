@@ -12,4 +12,31 @@ class Api::ContactsController < ApplicationController
     
         render json: @contacts
       end
+
+      def create
+
+        @contact = Contact.create(contact_params)
+        render json: @contact
+
+      end
+  
+      def update
+
+        @contact = Contact.find(params[:id])
+        @contact.update_attributes(contact_params)
+        render json: @contact
+
+      end
+
+      def destroy
+
+        @contact= Contact.find params[:id]
+        @contact.destroy
+
+    end
+
+    private
+    def contact_params
+        contact_params = params.require(:contact).permit(:first_name, :last_name, :phone_number)
+    end
 end

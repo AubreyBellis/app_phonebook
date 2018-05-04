@@ -14,6 +14,6 @@ user_three = User.create({first_name:"Howard", last_name: "Hugh", email: "Hughdo
 
 
 contact_one = Contact.create({first_name: "Ashley", last_name: "Lowe", phone_number: "404-229-0769", user_id: user_one.id})
-contact_two  = Contact.create({first_name: "Ashley", last_name: "Lowe", phone_number: "404-229-0769", user_id: user_two.id})
-contact_three  = Contact.create({first_name: "Ashley", last_name: "Lowe", phone_number: "404-229-0769", user_id: user_three.id})
-contact_four  = Contact.create({first_name: "Ashley", last_name: "Lowe", phone_number: "404-229-0769", user_id: user_one.id})
+contact_two  = Contact.create({first_name: "Hank", last_name: "Lowe", phone_number: "404-229-0769", user_id: user_two.id})
+contact_three  = Contact.create({first_name: "Larry", last_name: "Lowe", phone_number: "404-229-0769", user_id: user_three.id})
+contact_four  = Contact.create({first_name: "Walker", last_name: "Lowe", phone_number: "404-229-0769", user_id: user_one.id})

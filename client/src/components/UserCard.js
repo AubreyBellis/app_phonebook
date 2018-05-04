@@ -14,6 +14,7 @@ const UserCard = (props) => {
         <h3>{user.email}</h3>
       </Link>
   );
+  // <button onClick={this._deleteContact}>(x)</button>
 };
 
 export default UserCard;

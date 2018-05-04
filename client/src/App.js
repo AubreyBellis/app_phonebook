@@ -6,10 +6,9 @@ import SingleUser from "./components/SingleUser";
 import SplashPage from './components/SplashPage'
 // import NewTeacher from './components/NewTeacher';
 import ContactList from './components/ContactList';
-// import Classroom from './components/Classroom';
-// import EditClassroom from './components/EditClassroom';
-// // import { setAxiosDefaults } from './util';
 import Contact from './components/Contact';
+// import EditClassroom from './components/EditClassroom';
+// import { setAxiosDefaults } from './util';
 
 class App extends Component {
   // componentWillMount(){
@@ -22,7 +21,6 @@ class App extends Component {
           <Route exact path='/' component={SplashPage} />
           <Route exact path="/users" component={ProfilePage}/>
           <Route exact path="/user/:id" component={SingleUser}/>
-          <Route exact path="/users/:id/contacts/:id" component={Contact}/>
           <Route exact path="/users/:id/contacts" component={ContactList}/>
           {/*}
           <Route exact path='/teachers/:id/edit' component={EditTeacher} />

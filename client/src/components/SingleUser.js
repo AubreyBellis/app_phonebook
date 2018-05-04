@@ -54,6 +54,7 @@ componentWillMount(){
           console.log(err)
       }
   }
+  
   render() {
     return (
       <div>
@@ -70,7 +71,6 @@ componentWillMount(){
             <p><strong>Contacts:</strong></p>
             <ContactList contacts={this.state.contacts} userId={this.props.match.params.id}/>
             {/* <Link to={`/teachers/${this.props.match.params.id}/edit`}><button>Edit Teacher</button></Link> */}
-            <button onClick={this._deleteContact}>Delete This Contact</button>
           
       </div>
 

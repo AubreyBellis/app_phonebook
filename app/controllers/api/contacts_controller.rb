@@ -2,7 +2,7 @@ class Api::ContactsController < ApplicationController
     def index
         @user = User.find(params[:user_id])
         @contacts = @user.contacts.all
-    
+     
         render json:{user: @user, contacts: @contacts}
       end
     
@@ -15,15 +15,16 @@ class Api::ContactsController < ApplicationController
 
       def create
 
-        @contact = Contact.create(contact_params)
-        render json: @contact
+        @contact = Contact.new(contact_params)
+        @contact.save
+        # redirect_to api_user_contacts_path
 
       end
   
       def update
 
         @contact = Contact.find(params[:id])
-        @contact.update_attributes(contact_params)
+        @contact.update(contact_params)
         render json: @contact
 
       end

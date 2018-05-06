@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import ProfilePage from "./components/ProfilePage";
-// import EditTeacher from './components/EditTeacher';
+import { BrowserRouter as Router, Route} from "react-router-dom";
+import AllUsers from "./components/AllUsers";
+import EditUser from './components/EditUser';
 import SingleUser from "./components/SingleUser";
 import SplashPage from './components/SplashPage'
-// import NewTeacher from './components/NewTeacher';
+import NewUser from './components/NewUser';
 import ContactList from './components/ContactList';
 import Contact from './components/Contact';
 // import EditClassroom from './components/EditClassroom';
@@ -19,9 +19,11 @@ class App extends Component {
       <Router>
         <div>
           <Route exact path='/' component={SplashPage} />
-          <Route exact path="/users" component={ProfilePage}/>
+          <Route exact path="/users" component={AllUsers}/>
           <Route exact path="/user/:id" component={SingleUser}/>
+          <Route exact path='/users/new' component={NewUser} />
           <Route exact path="/users/:id/contacts" component={ContactList}/>
+          <Route exact path='/users/:id/edit' component={EditUser} />
           {/*}
           <Route exact path='/teachers/:id/edit' component={EditTeacher} />
           <Route exact path='/teachers/new' component={NewTeacher} />

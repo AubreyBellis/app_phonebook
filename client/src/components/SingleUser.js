@@ -1,83 +1,80 @@
 import React, { Component } from 'react'
-import {Link, Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
 import ContactList from './ContactList'
 
+const ArtistStyles = styled.div`
+  img {
+    max-height: 400px;
+    width: 100%;
+  }
+`;
 
-
-class SingleUser extends Component {
+class SingleUser extends Component{
   constructor(){
-      super();
-      this.state = {
-          contacts:[],
-          user: {
-              first_name: '',
-              last_name: '',
-              email:''
-          },
-          redirect: false
-      };
+    super();
+    this.state = {
+      user: {},
+      contacts: []
+    }
+}
+
+  componentWillMount(){
+    this._fetchUserAndContacts();
   }
 
-componentWillMount(){
-      const userId = this.props.match.params.id;
-      this._fetchUsersAndContacts();
-      
-  }
-
-  _fetchUsersAndContacts = async () => {
-      try {
-          const id = this.props.match.params.id;
-          const res = await axios.get(`/api/users/${id}/contacts`)
-          await this.setState({
-           user: res.data.user,
-              contacts: res.data.contacts
-          })
-        
-          return res.data
-          console.log(res.data)
-      }
-      catch(err) {
-          console.log(err)
-      }
+  _fetchUserAndContacts = async () => {
+    const id = this.props.match.params.id;
+    const res = await axios.get(`/api/users/${id}`)
+    this.setState({
+      user: res.data.user,
+      contacts: res.data.contacts
+    })
   }
   _deleteUser = async (e) => {
-      e.preventDefault();
-      try {
-          const res = await axios.delete(`/api/users/${this.props.match.params.id}`)
-          this.setState({redirect: true})
-          return res.data
-          
+    e.preventDefault();
+    try {
+        const id = this.props.match.params.id;
+        const res = await axios.delete(`/api/users/${id}`)
+        this.setState({redirect: true})
+        return res.data
+        
 
-      } catch(err) {
-          console.log(err)
-      }
-  }
-  
-  render() {
+    } catch(err) {
+        console.log(err)
+    }
+}
+
+
+  render(){
     return (
-      <div>
+
+        <div>
         {this.state.redirect 
         ? 
-            <Redirect to={'/'} />
+            <Redirect to={'/users'} />
         :
 
 
-            <div>
-        
-            <h1><strong>Name: </strong> {this.state.user.first_name}</h1>
-            <p><strong>Email: </strong> {this.state.user.email}</p>
-            <p><strong>Contacts:</strong></p>
-            <ContactList contacts={this.state.contacts} userId={this.props.match.params.id}/>
-            {/* <Link to={`/teachers/${this.props.match.params.id}/edit`}><button>Edit Teacher</button></Link> */}
-          
+         <div>
+      <ArtistStyles>
+        <button onClick={this._deleteUser}>X</button>
+        <button><Link to={`/users/${this.props.match.params.id}/edit`}>Edit Teacher</Link></button>
+        <h1>{this.state.user.first_name}</h1>
+        <h4>Nationality: {this.state.user.email}</h4>
+        <h3>Contacts</h3>
+        {this.state.contacts.map(contact => (
+          <div key={contact.id}>
+          <ContactList contacts={this.state.contacts} userId={this.props.match.params.id}/>
+          </div>
+        ))}
+      </ArtistStyles>
       </div>
-
-    }
+        }
     </div>
-    )
+     )
   }
 }
 
-export default SingleUser;
+export default SingleUser

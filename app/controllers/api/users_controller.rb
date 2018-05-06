@@ -13,10 +13,17 @@ class Api::UsersController < ApplicationController
         end
 
     def create
-        @user = User.create!(user_params)
-        redirect_to api_user_path(@user)
+        @user = User.new user_params
 
+        if @user.save
+          render json: @user
+        else
+          render json: {
+            message: 'Error when creating User'
+          }
         end
+      end
+
 
     def update
         @user = User.find params[:id]

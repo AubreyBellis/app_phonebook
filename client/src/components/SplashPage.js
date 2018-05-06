@@ -28,7 +28,7 @@ class SplashPage extends Component {
                 <div>
                 <HomePageContainer>
                 <h1>DiGi_Call</h1>
-
+                <h3><Link to="/users">Enter</Link></h3>
                 <br />
                 <br />
                 <br />

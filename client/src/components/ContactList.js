@@ -78,12 +78,14 @@ class ContactList extends Component {
       transitionIn: false
     }
   }
+  
 
   componentDidMount() {
     const id = this.props.userId;
     axios.get(`/api/users/${id}/contacts`)
     .then(response => {
       this.setState({contacts: response.data})
+      console.log(response)
     })
     .catch(error => console.log(error))
   }
@@ -92,6 +94,7 @@ class ContactList extends Component {
     const id = this.props.userId;
     axios.post(`/api/users/${id}/contacts`, {contact: {first_name: '',last_name: '', phone_number: ''}})
     .then(response => {
+      console.log(response);
       const contacts = update(this.state.contacts, { $splice: [[0, 0, response.data]]})
       this.setState({contacts: contacts, editingContactId: response.data.id})
     })
@@ -105,7 +108,8 @@ class ContactList extends Component {
   }
 
   deleteContact = (id) => {
-    axios.delete(`/api/contacts/${this.props.match.params.id}`)
+    const userId = this.props.userId;
+    axios.delete(`/api/users/${userId}/contacts/${this.props.match.params.id}`)
     .then(response => {
       const contactIndex = this.state.contacts.findIndex(x => x.id === id)
       const contacts = update(this.state.contacts, { $splice: [[contactIndex, 1]]})
@@ -131,7 +135,7 @@ class ContactList extends Component {
         </div>
         {this.props.contacts.map((contact) => {
           if(this.state.editingContactId === contact.id) {
-            return(<ContactForm contact={contact} key={contact.id} updateContact={this.updateContact}
+            return(<ContactForm contact={contact} key={contact.id} updateContact={this.updateContact} userId={this.props.userId}
                     titleRef= {input => this.first_name = input}
                     resetNotification={this.resetNotification} />)
           } else {

@@ -9,7 +9,8 @@ class Contact extends Component {
 		return(
 		  <div className="tile">
 		  	<span className="deleteButton" onClick={this.handleDelete}>x</span>
-		    <h4 onClick={this.handleClick}>{this.props.contact.first_name}{this.props.contact.last_name}</h4>
+		    <h4 onClick={this.handleClick}>{this.props.contact.first_name}</h4>
+				<h4 onClick={this.handleClick}>{this.props.contact.last_name}</h4>
 		    <p onClick={this.handleClick}>{this.props.contact.phone_number}</p>
 		  </div>
 		)

@@ -1,65 +1,3 @@
-// import React, { Component } from 'react';
-// import ContactCard from './ContactCard'
-// import axios from 'axios'
-// import styled from 'styled-components';
-
-
-// class ContactList extends Component {
-//     constructor(){
-//         super();
-//         this.state = {
-//           user: {},
-//           contacts: []
-//         }
-//       }
-    
-//       componentWillMount(){
-//         this._fetchContacts();
-//       }
-    
-//       _fetchContacts = async () => {
-//         const id = this.props.userId;
-//         try {
-//           const response = await axios.get(`/api/users/${id}/contacts`);
-//           const contacts = response.data;
-//           this.setState({contacts});
-//         } catch (err) {
-//           this.setState({error: err})
-//         }
-//       }
-//       _deleteContact = async (e) => {
-//         e.preventDefault();
-//         try {
-//             const res = await axios.delete(`/api/contacts/${this.props.match.params.id}`)
-//             this.setState({redirect: true})
-//             return res.data
-            
-    
-//         } catch(err) {
-//             console.log(err)
-//         }
-//     }
-    
-//     render(){
-//         return (
-//           <div>
-              
-//               {this.props.contacts.map((contact) =>(
-//                  <ContactCard key={contact.id} contacts={contact} userId={this.props.userId} />
-//                 ))}
-//                   <button onClick={this._deleteContact}>(x)</button>
-//                 </div>
-//         )
-//     }
-// }
-
-// ContactList.defaultProps = {
-//     contacts: []
-// }
-
-// export default ContactList;
-
-
 import React, { Component } from 'react'
 import axios from 'axios'
 import Contact from './Contact'
@@ -109,7 +47,8 @@ class ContactList extends Component {
 
   deleteContact = (id) => {
     const userId = this.props.userId;
-    axios.delete(`/api/users/${userId}/contacts/${this.props.match.params.id}`)
+    const contactId = this.props.contact;
+    axios.delete(`/api/users/${userId}/contacts/${contactId}`)
     .then(response => {
       const contactIndex = this.state.contacts.findIndex(x => x.id === id)
       const contacts = update(this.state.contacts, { $splice: [[contactIndex, 1]]})

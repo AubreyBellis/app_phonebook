@@ -59,18 +59,21 @@ class SingleUser extends Component{
 
          <div>
       <ArtistStyles>
-        <div>
-        <button onClick={this._deleteUser}>X</button>
-        <button><Link to={`/users/${this.props.match.params.id}/edit`}>Edit</Link></button>
-        </div>
-        <div>
-        <h1>Hello {this.state.user.first_name}</h1>
-        <h4>Email: {this.state.user.email}</h4>
-        </div>
-        <h3>Contacts</h3>
-        <div>
-        <ContactList contacts={this.state.contacts} userId={this.props.match.params.id}/>
-        </div>
+          <div class="col-xs-12">
+            <div>
+              <h1>Hello {this.state.user.first_name}</h1>
+            </div>
+              <div>
+                <button onClick={this._deleteUser}>X</button>
+              </div>
+              <div>
+                <button><Link to={`/users/${this.props.match.params.id}/edit`}>Edit</Link></button>
+              </div>
+          </div>
+              <h3>Contacts</h3>
+            <div>
+              <ContactList contacts={this.state.contacts} userId={this.props.match.params.id}/>
+            </div>
        </ArtistStyles>
       </div>
         }

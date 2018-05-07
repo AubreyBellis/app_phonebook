@@ -15,6 +15,7 @@ font-family: 'Special Elite', cursive;
   box-shadow: 0px 1px 6px black;
   a{
     text-decoration: none;
+    font-size:15px;
     color:white;
     margin: 0 5px;
     &:visited{
@@ -27,9 +28,10 @@ const GlobalNav = () => {
   return (
     <Nav>
       <div>
-        <Link to="/">
-        <h4>Home</h4>
-        </Link>
+        <Link to="/">Home</Link>
+      </div>
+      <div>
+      <Link to="/users">Enter</Link>
       </div>
     </Nav>
   );

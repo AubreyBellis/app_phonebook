@@ -9,13 +9,14 @@ flex-direction: column;
 justify-content: space-between;
 height: 100vh;
 width: 100vw;
+background-image: url("https://i.imgur.com/VjqEdTl.jpg");
 h1{
     font-family: 'Oswald', sans-serif;
     font-family: 'Special Elite', cursive;
     text-align:center;
     font-size:85px;
 }
-h2, h3{
+h2, h4{
     font-size: 45px;
     text-align:center;
     align-content:center;
@@ -35,18 +36,15 @@ class SplashPage extends Component {
     render() {
         return (
                 <div>
-                <HomePageContainer>
-                <h1>DiGi_Call</h1>
-                    <div id="container">
-                    </div>
-                <div>
-                <h3><Link to="/users">Enter</Link></h3>
-                </div>
-                <br />
-                <br />
-                <br />
-                </HomePageContainer>
-                {/* <SplashPageFooter></SplashPageFooter> */}
+                    <HomePageContainer>
+                        <div>
+                        <h1>phone_book</h1>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                    </HomePageContainer>
+                    {/* <SplashPageFooter></SplashPageFooter> */}
 
                 </div>
         );

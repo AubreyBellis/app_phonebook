@@ -4,6 +4,15 @@ import Contact from './Contact'
 import ContactForm from './ContactForm'
 import update from 'immutability-helper'
 import Notification from './Notification'
+import styled from 'styled-components'
+
+const ContactListStyle = styled.div`
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Special Elite', cursive;
+  input{
+   width: 50%;
+ }
+`;
 
 class ContactList extends Component {
   constructor(props) {
@@ -95,14 +104,13 @@ class ContactList extends Component {
           <Notification in={this.state.transitionIn} notification= {this.state.notification} /> 
           */}
         </div>
-
-        <div> 
-          <input type="text" placeholder="Search.." value={this.state.search} onChange={this.updateSearch.bind(this)} />
-        </div>
-
-        <div>
-          <ul>
-            {filteredContacts.map((contact) => {
+          <ContactListStyle>
+            <div class="searchBar"> 
+              <input type="text" placeholder="Search.." value={this.state.search} onChange={this.updateSearch.bind(this)} />
+            </div>
+            <div class="col-xs-12">
+              <ul>
+                {filteredContacts.map((contact) => {
 
           /* CONTACT FORM AND RESET NOTIFICATION */
           // if(this.state.editingContactId === contact.id) {
@@ -111,12 +119,13 @@ class ContactList extends Component {
           //           resetNotification={this.resetNotification} />)
           // } else {
 
-            return (<Contact contact={contact} key={contact.id}  onClick={this.enableEditing} userId={this.props.userId}
+              return (<Contact contact={contact} key={contact.id}  onClick={this.enableEditing} userId={this.props.userId}
                     onDelete={this.deleteContact} />)
-          }
-        )}
+              }
+            )}
           </ul>
         </div>
+        </ContactListStyle>
         </div>
         );
       }

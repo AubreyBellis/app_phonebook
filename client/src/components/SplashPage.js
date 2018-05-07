@@ -37,7 +37,7 @@ class SplashPage extends Component {
         return (
                 <div>
                     <HomePageContainer>
-                        <div>
+                        <div class="col-xs-12">
                         <h1>phone_book</h1>
                         </div>
                         <br />

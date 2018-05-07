@@ -4,10 +4,20 @@ import axios from 'axios'
 import styled from 'styled-components'
 import ContactList from './ContactList'
 
-const ArtistStyles = styled.div`
+const SingleUserStyles = styled.div`
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Special Elite', cursive;
   img {
     max-height: 400px;
     width: 100%;
+  }
+  h1{
+    font-size:;
+    margin-top: 20px;
+  }
+  .contactHeader{
+    margin-top: 30px;
+    text-align: center;
   }
 `;
 
@@ -58,23 +68,31 @@ class SingleUser extends Component{
 
 
          <div>
-      <ArtistStyles>
-          <div class="col-xs-12">
-            <div>
+      <SingleUserStyles>
+        <div class="col-md-1"></div>
+          <div class="col-xs-12 col-md-11">
+            <div class="userFirstName col-xs-8">
               <h1>Hello {this.state.user.first_name}</h1>
             </div>
-              <div>
-                <button onClick={this._deleteUser}>X</button>
+              <div class="col-xs-2" style={{'margin-top': '25px'}}>
+              <button type="button" class="close" aria-label="Close" onClick={this._deleteUser}>
+                <span style={{'font-size': '25px'}} aria-hidden="true">&times;</span>
+              </button>
+                {/* <button onClick={this._deleteUser}>X</button> */}
               </div>
-              <div>
-                <button><Link to={`/users/${this.props.match.params.id}/edit`}>Edit</Link></button>
+              <div class="col-xs-2" style={{'margin-top': '26px'}}>
+                <Link to={`/users/${this.props.match.params.id}/edit`}><span class="glyphicon glyphicon-user"></span></Link>
               </div>
           </div>
-              <h3>Contacts</h3>
-            <div>
-              <ContactList contacts={this.state.contacts} userId={this.props.match.params.id}/>
-            </div>
-       </ArtistStyles>
+              <div>
+                <div class="col-xs-12 contactHeader">
+                  <h2>:Contacts:</h2>
+                </div>
+                <div class="col-xs-12" style={{'text-align': 'center'}}>
+                  <ContactList contacts={this.state.contacts} userId={this.props.match.params.id}/>
+                  </div>
+              </div>
+       </SingleUserStyles>
       </div>
         }
     </div>

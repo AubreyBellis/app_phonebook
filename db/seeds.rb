@@ -14,6 +14,15 @@ user_three = User.create({first_name:"Howard", last_name: "Hugh", email: "Hughdo
 
 
 contact_one = Contact.create({first_name: "Ashley", last_name: "Lowe", phone_number: "404-229-0769", user_id: user_one.id})
-contact_two  = Contact.create({first_name: "Hank", last_name: "Lowe", phone_number: "404-229-0769", user_id: user_two.id})
-contact_three  = Contact.create({first_name: "Larry", last_name: "Lowe", phone_number: "404-229-0769", user_id: user_three.id})
-contact_four  = Contact.create({first_name: "Walker", last_name: "Lowe", phone_number: "404-229-0769", user_id: user_one.id})
+contact_two  = Contact.create({first_name: "Hank", last_name: "Hammer", phone_number: "404-229-0769", user_id: user_two.id})
+contact_three  = Contact.create({first_name: "Larry", last_name: "Lands", phone_number: "404-229-0769", user_id: user_three.id})
+contact_four  = Contact.create({first_name: "Walker", last_name: "Miller", phone_number: "404-229-0769", user_id: user_one.id})
+contact_five  = Contact.create({first_name: "Kelsey", last_name: "kale", phone_number: "404-229-0769", user_id: user_one.id})
+contact_six  = Contact.create({first_name: "Jeff", last_name: "Campbell", phone_number: "404-229-0769", user_id: user_two.id})
+contact_seven  = Contact.create({first_name: "Amy", last_name: "Adams", phone_number: "404-229-0769", user_id: user_two.id})
+contact_eight  = Contact.create({first_name: "Ryan", last_name: "Reynolds", phone_number: "404-229-0769", user_id: user_three.id})
+contact_nine  = Contact.create({first_name: "Sara", last_name: "Sanders", phone_number: "404-229-0769", user_id: user_one.id})
+contact_ten  = Contact.create({first_name: "Loren", last_name: "Strickland", phone_number: "404-229-0769", user_id: user_one.id})
+contact_eleven  = Contact.create({first_name: "Harry", last_name: "Hayes", phone_number: "404-229-0769", user_id: user_three.id})
+contact_twelve  = Contact.create({first_name: "Adler", last_name: "Seabolt", phone_number: "404-229-0769", user_id: user_three.id})
+contact_thirteen  = Contact.create({first_name: "Toni", last_name: "Holton", phone_number: "404-229-0769", user_id: user_two.id})

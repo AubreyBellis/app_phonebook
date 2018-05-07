@@ -7,8 +7,10 @@ import SplashPage from './components/SplashPage'
 import NewUser from './components/NewUser';
 import ContactList from './components/ContactList';
 import Contact from './components/Contact';
-// import EditClassroom from './components/EditClassroom';
-// import { setAxiosDefaults } from './util';
+import GlobalNav from './components/GlobalNav';
+
+
+
 
 class App extends Component {
   // componentWillMount(){
@@ -18,6 +20,8 @@ class App extends Component {
     return (
       <Router>
         <div>
+        <GlobalNav />
+       
           <Route exact path='/' component={SplashPage} />
           <Route exact path="/users" component={AllUsers}/>
           <Route exact path="/user/:id" component={SingleUser}/>

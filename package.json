@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "babel-runtime": "^6.26.0",
     "immutability-helper": "^2.7.0",
     "react-router-dom": "^4.2.2",
+    "react-search-box": "0.0.10",
     "styled-components": "^2.4.0"
   }
 }

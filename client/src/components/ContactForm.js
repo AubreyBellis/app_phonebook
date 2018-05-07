@@ -36,8 +36,8 @@ class ContactForm extends Component {
 					<input className='input' type="text" name="first_name" placeholder='Enter a Title'
             value={this.state.first_name} onChange={this.handleInput}
             ref={this.props.titleRef} />
-					<textarea className='input' name="body" placeholder='Describe your idea'
-            value={this.state.phone_number} onChange={this.handleInput}></textarea>
+					<input className='input' name="phone_number" placeholder='Describe your idea'
+            value={this.state.phone_number} onChange={this.handleInput}></input>
       	</form>
       </div>
     );

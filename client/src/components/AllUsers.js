@@ -41,12 +41,16 @@ class AllUsers extends Component{
       return <h1>YOU MUST LOGIN</h1>
     }
     return (
+      <div>
+        <div>
+          </div>
       <ArtistListStyles>
         {this.state.users.map((user) => (
           <UserCard key={user.id} user={user} />
         ))}
         <h3><Link to="/users/new">(+)</Link></h3>
       </ArtistListStyles>
+      </div>
     )
   }
 }

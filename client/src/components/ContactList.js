@@ -9,6 +9,7 @@ class ContactList extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      search: 'Level Up',
       users: {},
       contacts: [],
       editingContactId: null,
@@ -63,15 +64,24 @@ class ContactList extends Component {
     this.setState({editingContactId: id}, () => { this.first_name.focus() })
   }
 
+  updateSearch() {
+    console.log('yo');
+  }
+
   render() {
     return (
+   
+        // <input type="text" defaultValue="Level Up" />
+     
       <div>
         <div>
           <button className="newIdeaButton" onClick={this.addNewContact} >
             New Idea
           </button>
-          <Notification in={this.state.transitionIn} notification= {this.state.notification} />
+          {/* <Notification in={this.state.transitionIn} notification= {this.state.notification} /> */}
+
         </div>
+        <div>
         {this.props.contacts.map((contact) => {
           if(this.state.editingContactId === contact.id) {
             return(<ContactForm contact={contact} key={contact.id} updateContact={this.updateContact} userId={this.props.userId}
@@ -82,6 +92,7 @@ class ContactList extends Component {
                     onDelete={this.deleteContact} />)
           }
         })}
+        </div>
       </div>
     );
   }

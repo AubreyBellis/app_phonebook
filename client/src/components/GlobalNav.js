@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import SearchBar from './SearchBar';
 
 const Nav = styled.div`
 font-family: 'Oswald', sans-serif;
 font-family: 'Special Elite', cursive;
   width: 100%;  
+  height: 35px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,12 +27,9 @@ const GlobalNav = () => {
   return (
     <Nav>
       <div>
-      <Link to="/">
+        <Link to="/">
         <h4>Home</h4>
-      </Link>
-      </div>
-      <div>
-     <SearchBar />
+        </Link>
       </div>
     </Nav>
   );

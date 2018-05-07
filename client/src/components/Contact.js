@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 
 class Contact extends Component {
-	handleClick = () => { this.props.onClick(this.props.contact.id) }
 
-	handleDelete = () => { this.props.onDelete(this.props.contact.id) }
+	/* CLICK EVENTS FOR UPDATE AND DELETING CONTACT */
+	
+	// handleClick = () => { this.props.onClick(this.props.contact.id) }
+
+	// handleDelete = () => { this.props.onDelete(this.props.contact.id) }
 
 	render () {
 		return(

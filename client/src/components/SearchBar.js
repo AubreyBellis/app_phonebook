@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import axios from 'axios'
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Search from 'react-search-box';
 
 class SearchBar extends Component {
@@ -14,14 +15,18 @@ class SearchBar extends Component {
     
       componentDidMount() {
         this.setState({
+            user: [],
           loading: true
         });
     
         fetch('http://localhost:3000/api/users')
         .then(res => res.json())
-        .then(user => {
+        .then(data => {
+            let users = this.state.users.map((user) => {
+                <div key={user.id} user={user}/>
+            })
           this.setState({
-            user: user.props,
+            users: users,
             loading: false
           });
         })
@@ -41,16 +46,19 @@ class SearchBar extends Component {
         return (
                 <div className="search__component">
                   <Search
-                    user={ this.state.user }
+                    user={ this.state.users }
                     onChange={ this.handleChange.bind(this) }
                     placeholder="Search..."
                     class="search-class"
-                    searchKey="first_name"
+                    searchKey="full_name"
                   />
                 </div>
             );
         }
+
     }
+         
+  
     
 
 export default SearchBar;

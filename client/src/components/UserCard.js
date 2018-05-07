@@ -2,27 +2,48 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-const ArtistStyles = styled.div`
-  width: 30%;
+const UserStyles = styled.div`
+  width: 40%;
   margin: 20px 0; 
   box-shadow: 1px 1px 5px black;
-  img {
-    width: 100%;
-    max-height: 200px;
+
+  .firstName{
+    text-align: center;
+    color: black;
   }
-  h3{
-    padding: 5px 0;
+  .userEmail{
+    margin-top: 20px;
   }
+  h3 {
+    margin-top: 5px;
+  }
+  h5 {
+    text-align:center;
+    color: black;
+  }
+  a{
+    text-decoration: none;
+    margin: 0 5px;
+    &:visited{
+      color: white;
+    }
 `;
 
 const UserCard = (props) => {
   const user = props.user;
   return (
-    <ArtistStyles>
-      <Link to={`/user/${user.id}`}>
-        <h3>{user.email}</h3>
-      </Link>
-    </ArtistStyles>
+    <UserStyles>
+      <div clasName="col-xs-12">
+        <Link to={`/user/${user.id}`}>
+        <div className="firstName">
+          <h3>{user.first_name}&nbsp;{user.last_name}</h3> 
+        </div>
+        <div className="userEmail">
+            <h5>{user.email}</h5>
+        </div>
+        </Link>
+      </div>
+    </UserStyles>
   );
 };
 

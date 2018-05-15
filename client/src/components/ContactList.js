@@ -10,7 +10,13 @@ const ContactListStyle = styled.div`
   font-family: 'Oswald', sans-serif;
   font-family: 'Special Elite', cursive;
   input{
-   width: 50%;
+   width:50%;
+ }
+ .searchBar {
+  margin-left: 25%;
+ }
+ .contactContainer {
+   padding-left: 0;
  }
 `;
 
@@ -94,7 +100,7 @@ class ContactList extends Component {
     );
     return (
     <div>
-        <div>
+        {/* <div> */}
           {/* ADD NEW CONTACT BUTTON 
           <button className="newIdeaButton" onClick={this.addNewContact} >
             New Idea
@@ -103,12 +109,12 @@ class ContactList extends Component {
           {/* NOTIFICATION RESET WHEN CONTACT IS UPDATED
           <Notification in={this.state.transitionIn} notification= {this.state.notification} /> 
           */}
-        </div>
+        {/* </div> */}
           <ContactListStyle>
-            <div class="searchBar"> 
+            <div class="col-xs-12 searchBar"> 
               <input type="text" placeholder="Search.." value={this.state.search} onChange={this.updateSearch.bind(this)} />
             </div>
-            <div class="col-xs-12">
+            <div class="col-xs-12 contactContainer">
               <ul>
                 {filteredContacts.map((contact) => {
 

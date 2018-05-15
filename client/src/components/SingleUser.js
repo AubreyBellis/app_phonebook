@@ -5,19 +5,26 @@ import styled from 'styled-components'
 import ContactList from './ContactList'
 
 const SingleUserStyles = styled.div`
-  font-family: 'Oswald', sans-serif;
-  font-family: 'Special Elite', cursive;
-  img {
-    max-height: 400px;
-    width: 100%;
-  }
+
+
   h1{
-    font-size:;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Nixie One', cursive;
     margin-top: 20px;
   }
+
   .contactHeader{
     margin-top: 30px;
+    margin-bottom: 10px;
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Nixie One', cursive;
+    font-style: italic;
+    text-decoration: underline;
+   
+  }
+  .userFirstName {
+    font-weight: bold;
   }
 `;
 
@@ -69,29 +76,31 @@ class SingleUser extends Component{
 
          <div>
       <SingleUserStyles>
-        <div class="col-md-1"></div>
-          <div class="col-xs-12 col-md-11">
+
+          <div class="col-xs-12">
             <div class="userFirstName col-xs-8">
-              <h1>Hello {this.state.user.first_name}</h1>
+              <h1>Hello {this.state.user.first_name}!</h1>
             </div>
-              <div class="col-xs-2" style={{'margin-top': '25px'}}>
+            <div class="col-xs-2" style={{'margin-top': '25px'}}>
               <button type="button" class="close" aria-label="Close" onClick={this._deleteUser}>
-                <span style={{'font-size': '25px'}} aria-hidden="true">&times;</span>
+              <span style={{'font-size': '25px', 'color': 'red;'}} aria-hidden="true">&times;</span>
               </button>
                 {/* <button onClick={this._deleteUser}>X</button> */}
-              </div>
-              <div class="col-xs-2" style={{'margin-top': '26px'}}>
-                <Link to={`/users/${this.props.match.params.id}/edit`}><span class="glyphicon glyphicon-user"></span></Link>
-              </div>
+            </div>
+            <div class="col-xs-2" style={{'margin-top': '26px'}}>
+              <Link to={`/users/${this.props.match.params.id}/edit`}><span class="glyphicon glyphicon-user"></span></Link>
+            </div>
           </div>
-              <div>
-                <div class="col-xs-12 contactHeader">
-                  <h2>:Contacts:</h2>
-                </div>
-                <div class="col-xs-12" style={{'text-align': 'center'}}>
-                  <ContactList contacts={this.state.contacts} userId={this.props.match.params.id}/>
-                  </div>
-              </div>
+          
+           
+          <div class="col-xs-12 contactHeader">
+            <h3>List of Contacts</h3>
+          </div>
+          <div class="col-xs-12" style={{'text-align': 'center;'}}>
+            <ContactList contacts={this.state.contacts} userId={this.props.match.params.id}/>
+          </div>
+           
+
        </SingleUserStyles>
       </div>
         }

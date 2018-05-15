@@ -2,28 +2,24 @@ import React, { Component } from 'react'
 import styled from 'styled-components';
 
 const ContactStyles = styled.div`
-	margin-top: 35px;
-	margin-right: 20px;
-	margin-left:25px;
-	box-shadow: 1px 1px 5px black;
-	text-align:center;
+	margin-top: 40px;
+	text-align: center;
 
-  h3 {
-    margin-top: 5px;
-  }
-  h5 {
-    text-align:center;
-    color: black;
-  }
-  a{
-    text-decoration: none;
-    margin: 0 5px;
-    &:visited{
-      color: white;
-		}
-	.contactContainer{
-		margin-left: 23px;
+	.contactNumber {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		padding-left: 0;
 	}
+	.contactFirstName {
+		padding-right: 0;
+		padding-left: 5px;
+	}
+	.contactLastName {
+		padding-left: 0;
+		padding-right: 5px;
+		padding-bottom: 5px;
+	}
+
 `;
 
 class Contact extends Component {
@@ -36,21 +32,25 @@ class Contact extends Component {
 
 	render () {
 		return(
-		  <div class="col-xs-12 contactContainer">
 			<ContactStyles>
-							<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-								<div class="col-xs-4">
-									<p onClick={this.handleClick}>{this.props.contact.first_name}</p>
+				 <div class="contactContainer">
+					<div class="col-md-3"></div>
+							<div class="col-xs-12 col-md-8">
+								<div class="col-xs-6 col-md-4 contactFirstName">
+									<h4 onClick={this.handleClick}>{this.props.contact.first_name}</h4>
 								</div>
-								<div class="col-xs-4">
-									<p onClick={this.handleClick}>{this.props.contact.last_name}</p>
+								<div class="col-xs-6 col-md-4 contactLastName">
+									<h4 onClick={this.handleClick}>{this.props.contact.last_name}</h4>
 								</div>
 							</div>
-							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-		    			<p onClick={this.handleClick}>{this.props.contact.phone_number}</p>
+				<div class="col-md-1"></div>
+
+
+			<div class="col-xs-12 contactNumber">
+								<span onClick={this.handleClick}>{this.props.contact.phone_number}</span>
+							</div>
 						</div>
 					</ContactStyles>
-		  </div>
 		)
 	}
 }

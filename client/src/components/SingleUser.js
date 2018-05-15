@@ -23,8 +23,9 @@ const SingleUserStyles = styled.div`
     text-decoration: underline;
    
   }
-  .userFirstName {
+  h1 {
     font-weight: bold;
+    font-size: 5vw;
   }
 `;
 
@@ -81,14 +82,19 @@ class SingleUser extends Component{
             <div class="userFirstName col-xs-8">
               <h1>Hello {this.state.user.first_name}!</h1>
             </div>
-            <div class="col-xs-2" style={{'margin-top': '25px'}}>
-              <button type="button" class="close" aria-label="Close" onClick={this._deleteUser}>
-              <span style={{'font-size': '25px', 'color': 'red;'}} aria-hidden="true">&times;</span>
+            <div class="col-xs-2">
+              <button type="button" class="close" aria-label="Close" style={{'font-size': '25px', 'color': 'red'}} onClick={this._deleteUser}>
+                <h1>
+                  <span  aria-hidden="true">&times;</span>
+                </h1>
               </button>
+            
                 {/* <button onClick={this._deleteUser}>X</button> */}
             </div>
-            <div class="col-xs-2" style={{'margin-top': '26px'}}>
-              <Link to={`/users/${this.props.match.params.id}/edit`}><span class="glyphicon glyphicon-user"></span></Link>
+            <div class="col-xs-2">
+              <h1>
+                <Link to={`/users/${this.props.match.params.id}/edit`}><span class="glyphicon glyphicon-user"></span></Link>
+              </h1>
             </div>
           </div>
           

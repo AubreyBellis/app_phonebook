@@ -3,23 +3,27 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const UserStyles = styled.div`
-  width: 40%;
+  width: 100%;
   margin: 20px 0; 
   box-shadow: 1px 1px 5px black;
 
   .firstName{
     text-align: center;
     color: black;
+    
   }
   .userEmail{
     margin-top: 20px;
   }
   h3 {
     margin-top: 5px;
+    font-size: 3vw;
+    font-weight: bold;
   }
   h5 {
     text-align:center;
     color: black;
+    font-size: 2.3vw;
   }
   a{
     text-decoration: none;
@@ -35,12 +39,14 @@ const UserCard = (props) => {
     <UserStyles>
       <div clasName="col-xs-12">
         <Link to={`/user/${user.id}`}>
-        <div className="firstName">
-          <h3>{user.first_name}&nbsp;{user.last_name}</h3> 
-        </div>
-        <div className="userEmail">
+
+          <div className="firstName">
+            <h3>{user.first_name}&nbsp;{user.last_name}</h3> 
+          </div>
+          <div className="userEmail">
             <h5>{user.email}</h5>
-        </div>
+          </div>
+          
         </Link>
       </div>
     </UserStyles>

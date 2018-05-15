@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Nav = styled.div`
-font-family: 'Oswald', sans-serif;
-font-family: 'Special Elite', cursive;
+  font-family: 'Libre Baskerville', serif;
   width: 100%;  
   height: 35px;
   display: flex;
@@ -15,9 +14,8 @@ font-family: 'Special Elite', cursive;
   box-shadow: 0px 1px 6px black;
   a{
     text-decoration: none;
-    font-size:15px;
-    color:white;
-    margin: 0 5px;
+    font-size: 13px;
+    color: white;
     &:visited{
       color: white;
     }
@@ -29,9 +27,6 @@ const GlobalNav = () => {
     <Nav>
       <div>
         <Link to="/">Home</Link>
-      </div>
-      <div>
-      <Link to="/users">Enter</Link>
       </div>
     </Nav>
   );

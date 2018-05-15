@@ -91,11 +91,11 @@ class EditUser extends Component {
                 <div>
                 <FormStyles>
                 <form onSubmit={this._editUser}>
-                <div class="col-xs-12 formPadding">
-                    <div class="col-xs-12 form-group">
-                        <div class="col-xs-6 col-sm-6">
-                            <label htmlFor="first_name">First Name: </label>
-                        </div>
+                    <div class="col-xs-12 formPadding">
+                        <div class="col-xs-12 form-group">
+                            <div class="col-xs-6 col-sm-6">
+                                <label htmlFor="first_name">First Name: </label>
+                            </div>
                         <div class="col-xs-6 col-sm-6">
                             <input onChange={this._handleChange} type="text" name="first_name" value={this.state.user.first_name} />
                         </div>
@@ -119,7 +119,7 @@ class EditUser extends Component {
                     <div class="col-xs-12 form-group centered">
                         <button>Update User</button>
                     </div>
-                    </div>
+                </div>
                 </form>
                 </FormStyles>
                 <br />

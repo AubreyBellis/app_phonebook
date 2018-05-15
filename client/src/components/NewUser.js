@@ -4,24 +4,19 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 const FormStyles = styled.div`
-padding: 30px;
-margin: 20px;
-font-family: 'Oswald', sans-serif;
-font-family: 'Special Elite', cursive;
-font-size: 18px;
-font-weight: bold;
-text-align: center;
+margin-top: 20px;
+margin-left: -10px;
+font-family: 'Libre Baskerville', serif;
 input {
-    width: 225px;;
-    height: 25px;
+    width: 100%;
 }
 button {
 border-radius: 3px;
-padding: 0.25em 1em;
+padding: 0.4em 3em;
 margin: 0 1em;
-background: #993300;
+background: black;
 color: white;
-border: 2px solid #941a18;
+border: 2px solid #f4d4df;
 font-size: 1em;
 align-content: center;
 }
@@ -34,6 +29,7 @@ input[type=submit] {
     font-size: 15px;
     margin: 10px;
     height: 30px;
+    outline-style: double;
 }
 `;
 
@@ -76,15 +72,16 @@ class NewUser extends Component {
         return <Redirect to="/users" />
    }
         return (
-            <div>
+
                 <FormStyles>
+                
                 <form onSubmit={this._newUser}>
-                <div class="col-md-3 col-lg-3"></div>
-                <div class="col-xs-12 col-md-6 col-lg-6">
-                    <div class="col-xs-12 form-group">
-                        <div class="col-xs-6 col-sm-6 ">
-                            <label htmlFor="first_name">First Name: </label>
-                        </div>
+                    
+                    <div class="col-xs-12 col-md-8 col-lg-8">
+                        <div class="col-xs-12 form-group">
+                            <div class="col-xs-6 col-sm-6 ">
+                                <label htmlFor="first_name">First Name: </label>
+                            </div>
                         <div class="col-xs-6 col-sm-6">
                             <input onChange={this._handleChange} type="text" name="first_name" value={this.state.first_name} />
                         </div>
@@ -108,11 +105,12 @@ class NewUser extends Component {
                         <div class="col-xs-12 form-group centered">
                             <button>Create New User</button>
                         </div>
-                        </div>
-                        <div class="col-xs-1 col-md-3 col-lg-3"></div>
+                    </div>
+                    
                 </form>
+              
                 </FormStyles>
-            </div>
+        
         );
     }
 }

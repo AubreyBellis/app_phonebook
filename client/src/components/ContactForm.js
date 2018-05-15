@@ -21,7 +21,7 @@ class ContactForm extends Component {
     const contact = {first_name: this.state.first_name,last_name: this.state.last_name, phone_number: this.state.phone_number}
     const userId = this.props.userId;
     axios.put(
-        `/api/users/${userId}/contacts/${this.props.contact.id}`, {contacts: {first_name: '',last_name: '', phone_number: ''}})
+        `/users/${userId}/contacts/${this.props.contact.id}`, {contacts: {first_name: '',last_name: '', phone_number: ''}})
     .then(response => {
       console.log(response)
       this.props.updateContact(response.data)

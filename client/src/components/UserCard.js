@@ -4,7 +4,8 @@ import styled from 'styled-components'
 
 const UserStyles = styled.div`
   width: 100%;
-  margin: 20px 0; 
+  margin-bottom: 10px;
+  margin-right: 1px;
   box-shadow: 1px 1px 5px black;
 
   .firstName{

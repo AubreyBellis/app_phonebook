@@ -5,23 +5,15 @@ import styled from 'styled-components';
 import axios from 'axios';
 const HomePageContainer = styled.div`
 display: flex;
-flex-direction: column;
 justify-content: space-between;
 height: 100vh;
 width: 100vw;
 background-image: url("https://i.imgur.com/VjqEdTl.jpg");
 h1{
-    font-family: 'Oswald', sans-serif;
-    font-family: 'Special Elite', cursive;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Nixie One', cursive;
     text-align:center;
     font-size:85px;
-}
-h2, h4{
-    font-size: 45px;
-    text-align:center;
-    align-content:center;
-    font-family: 'Oswald', sans-serif;
-    font-family: 'Special Elite', cursive;
 }
 a{
     text-decoration: none;

@@ -4,24 +4,19 @@ import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 
 const FormStyles = styled.div`
-padding: 30px;
-margin: 20px;
-font-family: 'Oswald', sans-serif;
-font-family: 'Special Elite', cursive;
-font-size: 18px;
-font-weight: bold;
-text-align: center;
+margin-top: 20px;
+margin-left: -10px;
+font-family: 'Libre Baskerville', serif;
 input {
-    width: 225px;;
-    height: 25px;
+    width: 100%;
 }
 button {
 border-radius: 3px;
-padding: 0.25em 1em;
-margin: 0 1em;
-background: #993300;
+padding: 0.4em 3em;
+margin: 1em 1em;
+background: black;
 color: white;
-border: 2px solid #941a18;
+border: 2px solid #f4d4df;
 font-size: 1em;
 align-content: center;
 }
@@ -34,6 +29,10 @@ input[type=submit] {
     font-size: 15px;
     margin: 10px;
     height: 30px;
+    outline-style: double;
+}
+.formPadding {
+    padding: 0px;
 }
 `;
 
@@ -92,10 +91,9 @@ class EditUser extends Component {
                 <div>
                 <FormStyles>
                 <form onSubmit={this._editUser}>
-                <div class="col-md-3 col-lg-3"></div>
-                <div class="col-xs-12 col-md-6 col-lg-6">
+                <div class="col-xs-12 formPadding">
                     <div class="col-xs-12 form-group">
-                        <div class="col-xs-6 col-sm-6 ">
+                        <div class="col-xs-6 col-sm-6">
                             <label htmlFor="first_name">First Name: </label>
                         </div>
                         <div class="col-xs-6 col-sm-6">
@@ -122,7 +120,6 @@ class EditUser extends Component {
                         <button>Update User</button>
                     </div>
                     </div>
-                    <div class="col-xs-1 col-md-3 col-lg-3"></div>
                 </form>
                 </FormStyles>
                 <br />

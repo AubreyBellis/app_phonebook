@@ -9,12 +9,12 @@ const Nav = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2.5%;
+  padding-left: 7px;
   background-color: black;
   box-shadow: 0px 1px 6px black;
   a{
     text-decoration: none;
-    font-size: 13px;
+    font-size: 15px;
     color: white;
     &:visited{
       color: white;
@@ -26,7 +26,7 @@ const GlobalNav = () => {
   return (
     <Nav>
       <div>
-        <Link to="/">Home</Link>
+        <Link to="/"><span class="glyphicon glyphicon-home"></span></Link>
       </div>
     </Nav>
   );

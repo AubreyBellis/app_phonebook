@@ -88,10 +88,10 @@ class EditUser extends Component {
             return <Redirect to="/users" />
        }
             return (
-                <div>
+            
                 <FormStyles>
                 <form onSubmit={this._editUser}>
-                    <div class="col-xs-12 formPadding">
+                <div class="col-xs-12 col-md-8 col-lg-8">
                         <div class="col-xs-12 form-group">
                             <div class="col-xs-6 col-sm-6">
                                 <label htmlFor="first_name">First Name: </label>
@@ -122,8 +122,8 @@ class EditUser extends Component {
                 </div>
                 </form>
                 </FormStyles>
-                <br />
-            </div>
+            
+    
         );
     }
 }

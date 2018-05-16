@@ -34,22 +34,23 @@ class Contact extends Component {
 		return(
 			<ContactStyles>
 				 <div class="contactContainer">
-					<div class="col-md-3"></div>
-							<div class="col-xs-12 col-md-8">
-								<div class="col-xs-6 col-md-4 contactFirstName">
-									<h4 onClick={this.handleClick}>{this.props.contact.first_name}</h4>
-								</div>
-								<div class="col-xs-6 col-md-4 contactLastName">
-									<h4 onClick={this.handleClick}>{this.props.contact.last_name}</h4>
-								</div>
-							</div>
-				<div class="col-md-1"></div>
+					{/* <div class="col-md-3"></div> */}
 
-
-			<div class="col-xs-12 contactNumber">
-								<span onClick={this.handleClick}>{this.props.contact.phone_number}</span>
-							</div>
+					<div class="col-xs-12 col-sm-8">
+						<div class="col-xs-6 col-sm-4 contactFirstName">
+							<h4 onClick={this.handleClick}>{this.props.contact.first_name}</h4>
 						</div>
+						<div class="col-xs-6 col-sm-4 contactLastName">
+							<h4 onClick={this.handleClick}>{this.props.contact.last_name}</h4>
+						</div>
+					</div>
+				{/* <div class="col-md-1"></div> */}
+
+
+					<div class="col-xs-12 col-sm-4 contactNumber">
+						<span onClick={this.handleClick}>{this.props.contact.phone_number}</span>
+					</div>
+				</div>
 					</ContactStyles>
 		)
 	}

@@ -23,9 +23,13 @@ const SingleUserStyles = styled.div`
     text-decoration: underline;
    
   }
-  h1 {
+  h1, h2 {
     font-weight: bold;
-    font-size: 5vw;
+    font-size: 4vw;
+  }
+  h3 {
+    margin-top: 20px;
+    font-size: 3vw;
   }
 `;
 
@@ -84,23 +88,23 @@ class SingleUser extends Component{
             </div>
             <div class="col-xs-2">
               <button type="button" class="close" aria-label="Close" style={{'font-size': '25px', 'color': 'red'}} onClick={this._deleteUser}>
-                <h1>
+                <h2>
                   <span  aria-hidden="true">&times;</span>
-                </h1>
+                </h2>
               </button>
             
                 {/* <button onClick={this._deleteUser}>X</button> */}
             </div>
             <div class="col-xs-2">
-              <h1>
+              <h3>
                 <Link to={`/users/${this.props.match.params.id}/edit`}><span class="glyphicon glyphicon-user"></span></Link>
-              </h1>
+              </h3>
             </div>
           </div>
           
            
           <div class="col-xs-12 contactHeader">
-            <h3>List of Contacts</h3>
+            <h4>List of Contacts</h4>
           </div>
           <div class="col-xs-12" style={{'text-align': 'center;'}}>
             <ContactList contacts={this.state.contacts} userId={this.props.match.params.id}/>
